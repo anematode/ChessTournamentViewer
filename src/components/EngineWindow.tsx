@@ -32,8 +32,8 @@ export function EngineWindow({ liveInfos, clocks, fen }: EngineWindowProps) {
     return findPvDisagreementPoint(fen, ...kibitzerLiveInfos);
   }, [fen, JSON.stringify(activeKibitzers)]);
   const [wtime, btime] = useMemo(() => {
-    const wtime = Number(clocks?.wtime ?? 0);
-    const btime = Number(clocks?.btime ?? 0);
+    const wtime = Number(clocks?.wtime || 1) || 1;
+    const btime = Number(clocks?.btime || 1) || 1;
     return [wtime, btime];
   }, [clocks?.wtime, clocks?.btime]);
 

@@ -459,7 +459,7 @@ function App() {
       <div className="boardWindow">
         <EngineMinimal
           info={liveInfos.black.liveInfo}
-          time={Number(clocks?.btime ?? 0)}
+          time={Number(clocks?.btime || 1) || 1}
           placeholder={"Black"}
           engine={liveInfos.black.engineInfo}
           className="borderRadiusTop"
@@ -490,7 +490,7 @@ function App() {
         />
         <EngineMinimal
           info={liveInfos.white.liveInfo}
-          time={Number(clocks?.wtime ?? 0)}
+          time={Number(clocks?.wtime || 1) || 1}
           placeholder={"White"}
           engine={liveInfos.white.engineInfo}
           className="borderRadiusBottom"
